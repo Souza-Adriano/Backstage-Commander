@@ -24,7 +24,7 @@ export interface BaseDTO {
 }
 interface ModelDataSet<T> {
     key: string;
-    contet: T;
+    content: T;
 }
 export interface Model<T> {
     name: string;
