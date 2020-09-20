@@ -28,11 +28,16 @@ export interface BaseDTO {
     [key:string]: BasicType | BaseDTO | BasicType[] | BaseDTO[]
 }
 
+interface ModelDataSet<T> {
+    key: string;
+    contet: T
+}
+
 export interface Model<T> {
     name: string;
     save(key: string, data: BaseDTO): Promise<void>
-    findOne(key: string): Promise<T>
-    findAll(): Promise<T[]>
+    findOne(key: string): Promise<ModelDataSet<T>>
+    findAll(): Promise<ModelDataSet<T[]>>
     keys(): Promise<string[]>
 }
 
