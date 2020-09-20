@@ -45,3 +45,7 @@ export interface Subscriber {
     init(): Promise<void>
     onCommand(callback: (command: CommandOrder) => Promise<void>): void
 }
+
+export const BaseKey = (...args: string[]) => {
+    return `@BACKSTAGE:${args.map(t => t.replace(':', '')).join(':')}`
+}
