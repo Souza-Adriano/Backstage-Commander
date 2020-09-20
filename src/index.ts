@@ -47,5 +47,5 @@ export interface Subscriber {
 }
 
 export const BaseKey = (...args: string[]) => {
-    return `@BACKSTAGE:${args.map(t => t.replace(':', '')).join(':')}`
+    return (id?: string) => `@BACKSTAGE:${args.map(t => t.replace(':', '')).join(':')}${id ? `:${id}` : ''}`
 }
