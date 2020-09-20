@@ -30,7 +30,7 @@ export interface Model<T> {
     name: string;
     save(key: string, data: BaseDTO): Promise<void>;
     findOne(key: string): Promise<ModelDataSet<T>>;
-    findAll(): Promise<ModelDataSet<T[]>>;
+    findAll(): Promise<ModelDataSet<T>[]>;
     keys(): Promise<string[]>;
 }
 export interface Publisher {
