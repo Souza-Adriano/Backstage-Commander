@@ -37,3 +37,4 @@ export interface Subscriber {
     init(): Promise<void>;
     onCommand(callback: (command: CommandOrder) => Promise<void>): void;
 }
+export declare const BaseKey: (...args: string[]) => string;
